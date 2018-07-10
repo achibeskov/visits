@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uyF-0g-GhF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View-->
+        <scene sceneID="LbL-iP-qst">
+            <objects>
+                <viewController id="gPe-tB-vRY" customClass="VisitsTableViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sie-Ge-agM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3SM-wo-Akh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="visitCell" textLabel="XM0-Cq-jX7" detailTextLabel="9Iq-av-gsm" style="IBUITableViewCellStyleSubtitle" id="d87-s9-xt4">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d87-s9-xt4" id="duG-0y-Qsa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XM0-Cq-jX7">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Iq-av-gsm">
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gPe-tB-vRY" id="qeT-gg-sAu"/>
+                                    <outlet property="delegate" destination="gPe-tB-vRY" id="AbI-U0-gOt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uav-S7-43n" firstAttribute="trailing" secondItem="3SM-wo-Akh" secondAttribute="trailing" id="0JH-21-ZC2"/>
+                            <constraint firstItem="3SM-wo-Akh" firstAttribute="top" secondItem="uav-S7-43n" secondAttribute="top" id="WaR-hd-Z3U"/>
+                            <constraint firstItem="3SM-wo-Akh" firstAttribute="leading" secondItem="uav-S7-43n" secondAttribute="leading" id="m7Y-ut-b4m"/>
+                            <constraint firstItem="uav-S7-43n" firstAttribute="bottom" secondItem="3SM-wo-Akh" secondAttribute="bottom" id="rbk-b3-5Ir"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uav-S7-43n"/>
+                    </view>
+                    <connections>
+                        <outlet property="output" destination="Q91-6z-C1u" id="A7n-Wu-eUg"/>
+                        <outlet property="tableView" destination="3SM-wo-Akh" id="cXc-z8-XEp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7H-qq-GMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Q91-6z-C1u" customClass="VisitListPresenter">
+                    <connections>
+                        <outlet property="organizationService" destination="nyu-oR-YTd" id="hOc-6X-dbv"/>
+                        <outlet property="view" destination="gPe-tB-vRY" id="1ga-9J-v77"/>
+                        <outlet property="visitService" destination="QAt-eH-MiI" id="qyZ-WN-gy5"/>
+                    </connections>
+                </customObject>
+                <customObject id="QAt-eH-MiI" customClass="VisitServiceImpl">
+                    <connections>
+                        <outlet property="mapper" destination="vMu-wt-NRt" id="Y7g-fV-lfO"/>
+                        <outlet property="networkClient" destination="fAn-oH-Sgb" id="rFJ-vJ-XQK"/>
+                        <outlet property="storage" destination="UjN-LF-cyO" id="lJ6-Ey-H46"/>
+                    </connections>
+                </customObject>
+                <customObject id="nyu-oR-YTd" customClass="OrganizationServiceImpl">
+                    <connections>
+                        <outlet property="mapper" destination="j4i-hK-ySk" id="v7M-90-ZDL"/>
+                        <outlet property="networkClient" destination="fAn-oH-Sgb" id="wce-rp-yQt"/>
+                        <outlet property="storage" destination="UjN-LF-cyO" id="tKF-yK-Ph9"/>
+                    </connections>
+                </customObject>
+                <customObject id="fAn-oH-Sgb" customClass="NetworkClientImpl"/>
+                <customObject id="UjN-LF-cyO" customClass="LocalStorageInMemory"/>
+                <customObject id="vMu-wt-NRt" customClass="VisitJsonMapper"/>
+                <customObject id="j4i-hK-ySk" customClass="OrganizationJsonMapper"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="-532"/>
+        </scene>
+        <!--View-->
+        <scene sceneID="Bg9-Cs-EKG">
+            <objects>
+                <viewController id="oFw-nk-YPk" customClass="VisitsMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UXk-My-R6t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Oa4-vt-0lY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oFw-nk-YPk" id="CrN-uT-ErB"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Oa4-vt-0lY" firstAttribute="leading" secondItem="o0Z-bP-HeG" secondAttribute="leading" id="bOF-rQ-CYO"/>
+                            <constraint firstItem="o0Z-bP-HeG" firstAttribute="bottom" secondItem="Oa4-vt-0lY" secondAttribute="bottom" id="cV2-Ny-0DW"/>
+                            <constraint firstItem="o0Z-bP-HeG" firstAttribute="trailing" secondItem="Oa4-vt-0lY" secondAttribute="trailing" id="luJ-fn-xYJ"/>
+                            <constraint firstItem="Oa4-vt-0lY" firstAttribute="top" secondItem="o0Z-bP-HeG" secondAttribute="top" id="nz1-LC-Mpa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o0Z-bP-HeG"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Oa4-vt-0lY" id="mdz-2c-mbD"/>
+                        <outlet property="output" destination="e9k-1H-D9h" id="oOC-C9-eMw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQN-ie-G1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="e9k-1H-D9h" customClass="VisitMapPresenter">
+                    <connections>
+                        <outlet property="organizationService" destination="dgf-EO-eeR" id="MBM-Vs-doL"/>
+                        <outlet property="view" destination="oFw-nk-YPk" id="9qw-Vd-SaX"/>
+                    </connections>
+                </customObject>
+                <customObject id="dgf-EO-eeR" customClass="OrganizationServiceImpl">
+                    <connections>
+                        <outlet property="mapper" destination="xn9-hK-KRU" id="Zun-2O-7HN"/>
+                        <outlet property="networkClient" destination="9Ng-SH-pH8" id="7oU-ML-fyV"/>
+                        <outlet property="storage" destination="52s-cZ-yeI" id="GoM-C8-FbG"/>
+                    </connections>
+                </customObject>
+                <customObject id="9Ng-SH-pH8" customClass="NetworkClientImpl"/>
+                <customObject id="52s-cZ-yeI" customClass="LocalStorageInMemory"/>
+                <customObject id="xn9-hK-KRU" customClass="OrganizationJsonMapper"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="159"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="wqK-sY-G8I">
+            <objects>
+                <splitViewController id="uyF-0g-GhF" customClass="SplitViewController" sceneMemberID="viewController">
+                    <connections>
+                        <outlet property="output" destination="CY6-fD-1vh" id="Bxa-Nc-T26"/>
+                        <segue destination="oFw-nk-YPk" kind="relationship" relationship="detailViewController" id="f05-Ii-qmz"/>
+                        <segue destination="gPe-tB-vRY" kind="relationship" relationship="masterViewController" id="OZ8-lJ-X06"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xj5-IA-iKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="CY6-fD-1vh" customClass="SplitPresenter"/>
+            </objects>
+            <point key="canvasLocation" x="-646" y="-173"/>
+        </scene>
+    </scenes>
+</document>
